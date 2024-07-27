@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Password Generator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="card">
+        <div class="card-body">
+            <textarea readonly id="password" placeholder="Your Secure Password" class="te"></textarea>
+
+            <div class="form-group">
+                <label for="password-length">Password Length: <span id="length-value">8</span></label>
+                <input type="range" class="form-control-range" id="password-length" min="8" max="128" value="8" oninput="document.getElementById('length-value').innerText = this.value;">
+            </div>
+
+            <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="include-uppercase">
+                <label class="form-check-label" for="include-uppercase">Include Uppercase Letters</label>
+            </div>
+
+            <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="include-lowercase">
+                <label class="form-check-label" for="include-lowercase">Include Lowercase Letters</label>
+            </div>
+
+            <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="include-numbers">
+                <label class="form-check-label" for="include-numbers">Include Numbers</label>
+            </div>
+
+            <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="include-symbols">
+                <label class="form-check-label" for="include-symbols">Include Symbols</label>
+            </div>
+
+            <button onclick="generatePass()" type="button" class="btn btn-generate">Generate Password</button>
+            <button onclick="copyPass()" type="button" class="btn btn-copy">Copy to clipboard</button>
+        </div>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>
